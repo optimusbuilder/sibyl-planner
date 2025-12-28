@@ -1,0 +1,14 @@
+langchain >= 0.2
+langchain_openai >= 0.2
+langchain_anthropic >= 0.2
+langchain_community >= 0.2
+langchain_groq
+mcp
+langchain_mcp_adapters
+tavily
+python-dotenv
+pypdf
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+

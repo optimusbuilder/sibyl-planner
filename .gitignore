@@ -1,0 +1,58 @@
+# --- Python Basics ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.manifest
+*.spec
+
+# --- Virtual Environments (Crucial to ignore) ---
+# These are the folders where your libraries live. 
+# You will reinstall these on the new Mac using requirements.txt
+venv/
+.venv/
+env/
+ENV/
+
+# --- macOS System Files ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Environment Variables & Secrets (Safety First) ---
+# NEVER commit these. Transfer them manually via AirDrop/USB.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.json   # Be careful not to ignore JSON data files you actually need
+secrets.json
+
+# --- Editor Settings ---
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+
+# --- Logs & Databases ---
+*.log
+*.sqlite3
+
+# --- Large Data / Build Artifacts ---
+# GitHub has a file size limit (100MB). 
+# If you have large datasets, ignore them here.
+build/
+dist/
+*.egg-info/
+
+# --- Google API & Sibyl Specifics ---
+credentials.json
+token.json
+token.pickle
+client_secret_*.json
