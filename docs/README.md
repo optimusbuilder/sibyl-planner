@@ -24,9 +24,10 @@ An intelligent semester planning agent that reads your syllabi and automatically
 # Clone the repo
 git clone https://github.com/optimusbuilder/sibyl-planner.git
 cd sibyl-planner
-
+# Create virtual environment
+uv venv
 # Install dependencies
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 
 # Set up environment variables
 # Add your API keys to a .env
