@@ -93,7 +93,4 @@ MIT License - see [LICENSE](LICENSE) file
 - Uses [MCP](https://modelcontextprotocol.io) for tool integration
 
 ## Support
-
-- 🐛 [Report bugs](https://github.com/optimusbuilder/sibyl-planner/issues)
-- 💡 [Request features](https://github.com/optimusbuilder/sibyl-planner/issues)
 - 📧 Email: oyeludeferanmi@gmail.com
