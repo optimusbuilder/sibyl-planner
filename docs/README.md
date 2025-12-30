@@ -1,14 +1,14 @@
-# 📚 SIBYL - AI Academic Planner
+# SIBYL - AI Academic Planner
 
 An intelligent semester planning agent that reads your syllabi and automatically creates an optimized study schedule in Google Calendar.
 
 ## Features
 
-- 📖 Reads PDF syllabi automatically
-- 🧠 Extracts all assignments, exams, and readings
-- 📅 Calculates strategic start dates (study 7 days before exams, etc.)
-- ✅ Syncs directly to Google Calendar
-- 🎯 Prioritizes high-stakes work (exams > assignments > readings)
+- Reads PDF syllabi automatically
+- Extracts all assignments, exams, and readings
+- Calculates strategic start dates (study 7 days before exams, etc.)
+- Syncs directly to Google Calendar
+- Prioritizes high-stakes work (exams > assignments > readings)
 
 
 ## Quick Start
