@@ -46,7 +46,6 @@ def add_calendar_event(
     try:
         service = get_calendar_service()
         
-        # Structure the event body for Google
         event = {
             'summary': summary,
             'description': description,
@@ -76,10 +75,10 @@ def is_iso_date(s: str) -> bool:
 # Functions for reading files and structuring content
 from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
-from system_prompt import SYSTEM_PROMPT
+from src.content_structurer_llm_prompt import SYSTEM_PROMPT
 
 from langchain_community.document_loaders import PyPDFLoader, DirectoryLoader
-from containers import SemesterPlan, CourseSyllabus, Event, Strategy
+from src.structures import SemesterPlan, CourseSyllabus, Event, Strategy
 import os
 from dotenv import load_dotenv
 load_dotenv()

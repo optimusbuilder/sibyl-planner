@@ -1,17 +1,17 @@
 import asyncio
+import os
 from langchain.agents import create_agent
 from langchain.agents import AgentState
 from langgraph.checkpoint.memory import InMemorySaver
 from langchain_mcp_adapters.client import MultiServerMCPClient
 from langchain.tools import tool, ToolRuntime
-from sibyl_prompt import SIBYL_PROMPT
-import os
-from dotenv import load_dotenv
 from langchain_anthropic import ChatAnthropic 
-from dataclasses import dataclass
 from langgraph.types import Command
 from langchain.messages import ToolMessage
 from langchain.messages import HumanMessage
+from src.prompts import SIBYL_PROMPT
+from dataclasses import dataclass
+from dotenv import load_dotenv
 load_dotenv()
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
@@ -69,22 +69,24 @@ def update_user_academic_standing(academic_standing : str, runtime: ToolRuntime)
 
 
 
-async def main():
-    # Get MCP tools
+async def main(query: str):
     mcp_tools = await client1.get_tools()
     
-    agent = create_agent(
-        model=model,
-        tools=[update_username, update_user_university, update_user_academic_standing, *mcp_tools],
-        system_prompt=SIBYL_PROMPT
+    agent= create_agent(
+        model=model, 
+        tools=[update_user_academic_standing, update_user_university,update_username, *mcp_tools],
+        system_prompt=SIBYL_PROMPT,
+        checkpointer=InMemorySaver(),
+        state_schema=CustomState
     )
-    question=HumanMessage(content="I want you to scan my syllabi. This is the path to it: /Users/oluwaferanmioyelude/Documents/Syllabus")
+    config={"configurable":{"thread_id":"1"}}
+    question=HumanMessage(content=f"{query}")
     response = await agent.ainvoke({
         "messages": [question]
-    })
-    
+    }, config=config)
+
     # Get final response
     final_message = response["messages"][-1]
     print(final_message.content)
 
-asyncio.run(main())
+asyncio.run(main(""))

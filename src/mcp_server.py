@@ -1,11 +1,11 @@
 from mcp.server import FastMCP
 from typing import Dict, List, Optional
-from system_prompt import SYSTEM_PROMPT
-from containers import SemesterPlan, CourseSyllabus, Event, Strategy
+from src.prompts import SYSTEM_PROMPT
+from src.structures import SemesterPlan, CourseSyllabus, Event, Strategy
 from langchain_core.documents import Document
 mcp=FastMCP()
 from langchain_openai import ChatOpenAI
-from functions import get_calendar_service, file_reader, content_structurer, add_calendar_event, is_iso_date
+from src.functions import get_calendar_service, file_reader, content_structurer, add_calendar_event, is_iso_date
 
 
 @mcp.tool()
