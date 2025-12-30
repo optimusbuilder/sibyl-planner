@@ -22,7 +22,7 @@ An intelligent semester planning agent that reads your syllabi and automatically
 ### Installation
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/sibyl-planner.git
+git clone https://github.com/optimusbuilder/sibyl-planner.git
 cd sibyl-planner
 
 # Install dependencies
@@ -60,7 +60,7 @@ GOOGLE_CALENDAR_CREDENTIALS=path/to/credentials.json
 
 ## Architecture
 
-- **Agent**: LangGraph ReAct agent powered by Claude Sonnet 4
+- **Agent**: LangGraph ReAct agent powered by Claude Haiku 4.5
 - **Tools**: MCP (Model Context Protocol) for file reading and calendar integration
 - **Models**: Pydantic for structured data validation
 
